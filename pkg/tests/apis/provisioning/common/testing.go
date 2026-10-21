@@ -1910,7 +1910,7 @@ func (h *ProvisioningTestHelper) supportedResourceClients() (map[string]dynamic.
 		if err != nil {
 			return nil, fmt.Errorf("resolve supported resource %s: %w", supported.GroupKind, err)
 		}
-		clients[supported.GroupKind.String()] = dyn.Resource(mapping.Resource).Namespace("default")
+		clients[supported.String()] = dyn.Resource(mapping.Resource).Namespace("default")
 	}
 	return clients, nil
 }
